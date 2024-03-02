@@ -1,0 +1,179 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title> MOTUS Expiration Clock </title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+
+    <div class="header">
+        <center><p> MOTUS Egg-xpiration Clock</p></center>
+
+    </div>
+
+    <div class="timer">
+
+        <div>
+            <p id="days">00</p>
+            <span>Days</span>
+        </div>
+
+        <div>
+            <p id="hours">00</p>
+            <span>Hours</span>
+        </div>
+
+        <div>
+            <p id="minutes">00</p>
+            <span>Minutes</span>
+        </div>
+
+        <div>
+            <p id="seconds">00</p>
+            <span>Seconds</span>
+        </div>
+
+        <img id="img1" src="images/b1.png" class="img1" />
+        <img id="img2" src="images/b13.png" class="img2" />
+        <img id="img17" src="images/b24.png" class="img17" />
+        <img id="img15" src="images/b2.png" class="img15" />
+        <img id="img16" src="images/b21.png" class="img16" />
+        <img id="img8" src="images/b7.png" class="img8" />
+        <img id="img9" src="images/b11.png" class="img9" />
+        <img id="img10" src="images/b19.png" class="img10" />
+
+        <img src="images/cloud5.png" class="cloud">
+        <img src="images/cloud5.png" class="cloud2">
+        <img src="images/cloud5.png" class="cloud10">
+        <img src="images/cloud5.png" class="cloud3">
+        <img src="images/cloud5.png" class="cloud4">
+        <img src="images/cloud5.png" class="cloud5">
+        <img src="images/cloud5.png" class="cloud6">
+        <img src="images/cloud5.png" class="cloud7">
+        <img src="images/cloud5.png" class="cloud8">
+        <img src="images/cloud5.png" class="cloud9">
+
+
+        <script>
+
+            var countDownDate = new Date("Mar 4, 2024 00:00:00").getTime();
+            var x = setInterval(function () {
+                var now = new Date().getTime();
+                var distance = countDownDate - now;
+
+                var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                document.getElementById("days").innerHTML = days;
+                document.getElementById("hours").innerHTML = hours;
+                document.getElementById("minutes").innerHTML = minutes;
+                document.getElementById("seconds").innerHTML = seconds;
+
+                let message = document.querySelector("#message");
+
+                if (distance < 0) {
+                    clearInterval(x);
+                    document.getElementById("days").innerHTML = "00";
+                    document.getElementById("hours").innerHTML = "00";
+                    document.getElementById("minutes").innerHTML = "00";
+                    document.getElementById("seconds").innerHTML = "00";
+                    document.getElementById("message").innerHTML = "Congratulations on hitting the wall!";
+
+                }
+            }, 1000);
+
+
+        </script>
+
+
+    </div>
+
+
+    </center>
+
+
+
+
+
+
+    <div class="container">
+
+        <div class="message">
+
+            <h2 id="message"> </h2>
+
+
+        </div>
+
+        <div class="content">
+
+            <center><img src="images/logo3.png" class="logo" width="800" height="227"></center>
+            <img id="img3" src="images/b3.png" class="img3" />
+
+            <img id="img14" src="images/b9.png" class="img14" />
+
+
+        </div>
+
+
+        <img id="img13" src="images/b18.png" class="img13" />
+
+        <img id="img4" src="images/b15.png" class="img4" />
+        <img id="img11" src="images/b14.png" class="img11" />
+        <img id="img12" src="images/b6.png" class="img12" />
+
+        <img id="img7" src="images/b4.png" class="img4" />
+        <img id="img5" src="images/b16.png" class="img5" />
+        <img id="img6" src="images/b20.png" class="img6" />
+
+        <img id="img18" src="images/b25.png" class="img18" />
+
+
+
+
+    </div>
+
+
+    
+
+
+    <div class="cont2">
+
+        <center><button class="button" onclick="bouncingBunnies()" type="button"><p style="color: #e484b4 ">Click Here &#x2764;</p></button></center>
+
+
+        <script>
+            function bouncingBunnies() {
+                var images = ['img1', 'img2', 'img3', 'img4', 'img5', 'img6', 'img7', 'img8', 'img9', 'img10', 'img11', 'img12', 'img13', 'img14', 'img15', 'img16', 'img17', 'img18']
+                images.forEach(function (id) {
+                    var img = document.getElementById(id);
+                    img.classList.toggle('bounce');
+                });
+            }
+        </script>
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+
+</html>
